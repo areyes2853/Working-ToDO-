@@ -1,0 +1,17 @@
+
+
+<mat-card>
+    <form (submit)="onSaveTask(postForm)" #postForm ="ngForm">
+     <mat-form-field>
+   <input matInput type="text" placeholder="Title" name = "title" [ngModel] = "post?.title" required minlenght = "3" #title = "ngModel">
+   <mat-error *ngIf="title.invalid">You didn't add a Title to the task!</mat-error>
+   </mat-form-field>
+   <mat-form-field>
+   <textarea  matInput rows = "3" placeholder="List your tasks." name = "content" [ngModel] = "post?.content" required #content = "ngModel">
+   </textarea>
+   <mat-error *ngIf="content.invalid">You didn't add a task!</mat-error>
+   </mat-form-field>
+   <button mat-raised-button
+    color="primary" type="submit">Save ToDos</button>
+   </form>
+   </mat-card>
